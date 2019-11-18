@@ -13,6 +13,9 @@ import { QuotedataComponent } from 'src/components/quote/quote.component';
 import { FormsModule } from '@angular/forms';
 import { EventComponent } from 'src/components/event/event.component';
 import { VideosComponent } from 'src/components/videos/videos.component';
+import { SigninComponent } from 'src/components/signin/signin.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { VideosComponent } from 'src/components/videos/videos.component';
     FooterComponent,
     QuotedataComponent,
     EventComponent,
-    VideosComponent
+    VideosComponent,
+    SigninComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { VideosComponent } from 'src/components/videos/videos.component';
     MatOptionModule,
     MatSelectModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

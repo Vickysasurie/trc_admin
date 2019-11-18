@@ -1,7 +1,9 @@
 <app-header></app-header>
-    
-    <div style="min-height: 80%">
-        <router-outlet></router-outlet>
-    </div>
 
+<div style="min-height: 80%" *ngIf="this.token; else elseBlock">
+    <router-outlet></router-outlet>
+</div>
+<ng-template #elseBlock style="min-height: 80%">
+    <app-signin></app-signin>
+</ng-template>
 <app-footer></app-footer>

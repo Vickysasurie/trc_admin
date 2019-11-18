@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { BackendcallService } from 'src/services/backendcall.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TRCadmin';
+  token: String;
+  
+  constructor(public backendservice: BackendcallService, private cdr: ChangeDetectorRef){
+    
+  }
+  ngOnInit() {
+    this.token = localStorage.getItem('token');
+  }
+  
 }

@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { QuotedataComponent } from 'src/components/quote/quote.component';
 import { EventComponent } from 'src/components/event/event.component';
 import { VideosComponent } from 'src/components/videos/videos.component';
+import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
 
 const routes: Routes = [
+  
   {
-      path: '',
-      component: QuotedataComponent
+    path: '',
+    component: DashboardComponent
   },
   {
     path: 'event',
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path: 'video',
     component: VideosComponent
+  },
+  {
+    path: 'quote',
+    component: QuotedataComponent
   }
 ];
 
@@ -23,4 +29,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }
