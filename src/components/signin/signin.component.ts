@@ -18,7 +18,7 @@ login() {
 
   this.backendcall.login(this.user).subscribe(data=>{
     this.router.navigate([""]);
-    localStorage.setItem('token', JSON.stringify(data));
+    sessionStorage.setItem('token', JSON.stringify(data));
     console.log("Login Success");
     window.location.reload(true);
   },(err)=>{

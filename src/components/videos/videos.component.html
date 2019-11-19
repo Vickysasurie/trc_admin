@@ -3,24 +3,25 @@
 <div class="example-container">
       
         <mat-form-field>
-                <textarea matInput placeholder="Enter video title" [(ngModel)] = "videotitle"></textarea>
+                <textarea matInput placeholder="Enter video title" [(ngModel)] = "videos.videotitle"></textarea>
         </mat-form-field>
       
         <mat-form-field>
-                <input matInput type="text" placeholder="Enter video url" [(ngModel)] = "videourl" />
+                <input matInput type="text" placeholder="Enter video url" [(ngModel)] = "videos.videourl" />
         </mat-form-field>
         <mat-form-field>
-                <input matInput type="text" placeholder="Enter thumbnail url" [(ngModel)] = "thumbanailurl" />
+                <input matInput type="text" placeholder="Enter thumbnail url" [(ngModel)] = "videos.thumbanailurl" />
         </mat-form-field>
       
         <mat-form-field>
-                <input matInput type="text" placeholder="Enter description" [(ngModel)] = "description" />
+                <input matInput type="text" placeholder="Enter description" [(ngModel)] = "videos.description" />
         </mat-form-field>
         <mat-form-field>
-                <input matInput type="date" placeholder="Enter video date" [(ngModel)] = "videodate" />
+                <input matInput type="date" placeholder="Enter video date" [(ngModel)] = "videos.videodate" />
         </mat-form-field>
       
         <mat-form-field>
-                <input matInput type="text" placeholder="Enter video type" [(ngModel)] = "videotype" />
+                <input matInput type="text" placeholder="Enter video type" [(ngModel)] = "videos.videotype" />
         </mat-form-field>
+        <button mat-raised-button color="primary" (click)="videoPost()">Post Video</button>
 </div>

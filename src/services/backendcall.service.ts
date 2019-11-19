@@ -4,7 +4,7 @@ import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
+    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
   })
 };
 
@@ -25,7 +25,7 @@ export class BackendcallService {
 
   getAllDetails() {
     return this.http.get(this.baseUrl, {
-      params: new HttpParams().append('token', localStorage.getItem('token'))
+      params: new HttpParams().append('token', sessionStorage.getItem('token'))
     });
   }
 
@@ -33,8 +33,20 @@ export class BackendcallService {
     return this.http.get(`${this.baseUrl}/${type}`,httpOptions);
   }
 
-  saveInfo(event: Object, type: String){
+  saveEventInfo(event: Object, type: String){
     return this.http.post(`${this.baseUrl}/${type}`,{event},httpOptions);
+  }
+
+  saveVideoInfo(videos: Object, type: String){
+    return this.http.post(`${this.baseUrl}/${type}`,{videos},httpOptions);
+  }
+
+  saveQuoteInfo(quote: Object, type: String){
+    return this.http.post(`${this.baseUrl}/${type}`,{quote},httpOptions);
+  }
+
+  saveImagesInfo(images: Object, type: String){
+    return this.http.post(`${this.baseUrl}/${type}`,{images},httpOptions);
   }
 
 }

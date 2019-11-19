@@ -22,7 +22,7 @@ export class EventComponent implements OnInit {
   }
  eventPost() {
    this.event.createdBy = "admin";
-   this.backendcall.saveInfo(this.event,'event').subscribe(event=>{
+   this.backendcall.saveEventInfo(this.event,'event').subscribe(event=>{
      console.log(event);
    },(err)=>{
      console.log(err);

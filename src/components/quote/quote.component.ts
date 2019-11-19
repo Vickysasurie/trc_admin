@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendcallService } from 'src/services/backendcall.service';
 
 @Component({
   selector: 'app-quote',
@@ -7,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuotedataComponent implements OnInit {
 
-  public quote: string = null;
-  public quoteimageurl: string = null;
-  constructor() { }
+  public quote: any = {};
+
+  constructor(private backendcall: BackendcallService) { }
 
   ngOnInit() {
   }
 
   quotePost() {
-    console.log('Quote is:', this.quote + ' Quote image url: ', this.quoteimageurl);
+    this.quote.createdBy = "admin";
+    this.backendcall.saveQuoteInfo(this.quote, 'quote').subscribe(data=>{
+      console.log("Quote post successfully",data);
+    },(err)=>{
+      console.log("Error in post quote",err);
+    })
   }
 }

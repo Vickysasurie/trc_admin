@@ -14,7 +14,7 @@ export class AppComponent {
     
   }
   ngOnInit() {
-    this.token = localStorage.getItem('token');
+    this.token = sessionStorage.getItem('token');
   }
   
 }

@@ -4,6 +4,7 @@ import { QuotedataComponent } from 'src/components/quote/quote.component';
 import { EventComponent } from 'src/components/event/event.component';
 import { VideosComponent } from 'src/components/videos/videos.component';
 import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
+import { ImagesComponent } from 'src/components/images/images.component';
 
 const routes: Routes = [
   
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'quote',
     component: QuotedataComponent
+  },
+  {
+    path: 'images',
+    component: ImagesComponent
   }
 ];
 

@@ -3,10 +3,12 @@
 <div class="example-container">
       
     <mat-form-field>
-      <textarea matInput placeholder="Enter quote" [(ngModel)] = "quote"></textarea>
+      <textarea matInput placeholder="Enter quote" [(ngModel)] = "quote.quotetext"></textarea>
     </mat-form-field>
   
     <mat-form-field>
-        <input matInput placeholder="Enter image url" [(ngModel)] = "quoteimageurl">
+        <input matInput placeholder="Enter image url" [(ngModel)] = "quote.quoteimageurl">
     </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="quotePost()">Post Quote</button>
   </div>

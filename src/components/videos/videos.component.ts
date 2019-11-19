@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendcallService } from 'src/services/backendcall.service';
 
 @Component({
   selector: 'app-videos',
@@ -7,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideosComponent implements OnInit {
 
-  public videotitle: string = null;
-  public videourl: string = null;
-  public thumbanailurl: string = null;
-  public description: string = null;
-  public videodate: string = null;
-  public videotype: string = null;
-  constructor() { }
+  public videos: any = {};
+  constructor(private backendcall: BackendcallService) { }
 
   ngOnInit() {
   }
   videoPost() {
-    console.log('Video title is:', this.videotitle + ' Video url is: ', this.videourl, ' thumbnail url: ', this.thumbanailurl + ' desc: ', this.description + ' videodate: ', this.videodate + ' video type: ', this.videotype);
+    this.videos.createdBy = "admin";
+    this.backendcall.saveVideoInfo(this.videos, 'video').subscribe(data=>{
+      console.log("Videos post successfully",data);
+    },(err)=>{
+      console.log("Error in post video",err);
+    })
   }
 }

@@ -1,0 +1,14 @@
+<h2 style="text-align: center">Images Post</h2>
+
+<div class="example-container">
+      
+    <mat-form-field>
+      <input matInput placeholder="Enter image url" [(ngModel)] = "images.imageUrl">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Enter images type" [(ngModel)] = "images.imageType">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="imagesPost()">Post Images</button>
+  </div>

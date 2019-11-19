@@ -16,6 +16,7 @@ import { VideosComponent } from 'src/components/videos/videos.component';
 import { SigninComponent } from 'src/components/signin/signin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from 'src/components/dashboard/dashboard.component';
+import { ImagesComponent } from 'src/components/images/images.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DashboardComponent } from 'src/components/dashboard/dashboard.component
     EventComponent,
     VideosComponent,
     SigninComponent,
-    DashboardComponent
+    DashboardComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,
